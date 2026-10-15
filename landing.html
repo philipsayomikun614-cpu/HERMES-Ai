@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#020911">
+
+<title>HERMES | AI Interface</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+  --cyan: #00eaff;
+  --blue: #168bff;
+  --bg: #020911;
+  --glass: rgba(0, 234, 255, 0.055);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 42%, #09223a 0%, #030d19 42%, #01050b 100%);
+  color: #d9fbff;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  background-image:
+    linear-gradient(rgba(0,234,255,.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,234,255,.12) 1px, transparent 1px);
+  background-size: 35px 35px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: .13;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0,234,255,.12) 4px
+  );
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 6%;
+  border-bottom: 1px solid rgba(0,234,255,.2);
+  background: rgba(1,9,17,.65);
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 23px;
+  letter-spacing: 5px;
+  color: var(--cyan);
+  text-shadow: 0 0 15px rgba(0,234,255,.7);
+}
+
+.logo span {
+  display: block;
+  margin-top: 5px;
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #7bafc2;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #8fffe4;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00ffad;
+  box-shadow: 0 0 12px #00ffad;
+  animation: blink 1.5s infinite;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 1050px;
+  margin: auto;
+  padding: 25px 20px 40px;
+}
+
+.greeting {
+  text-align: center;
+  margin: 15px 0 0;
+}
+
+.eyebrow {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #65b9d4;
+}
+
+h1 {
+  margin-top: 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(23px, 5vw, 39px);
+  font-weight: 500
